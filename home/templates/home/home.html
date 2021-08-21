@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href= "{% static 'home/style.css' %}" >
+
+</head>
+<body>
+ <div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <form class="card card-sm">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col">
+            <input type="search" name="item_name" placeholder="Buscar por producto" class="form-control form-cotrol-borderless">
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-success" type="submit">Busqueda</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+   <div class="row">
+     {% for producto in total_productos %}
+     <div class="col-md-3">
+       <div class="card">
+         <div class= "card-img-top">
+          <img class="d-block img-fluid" src="{{ producto.imagen }}">
+           <div class="card-body">
+            <div class="card-title">
+            {{ producto.nombre }}
+            </div>
+            <div class="card-text">
+            $ {{ producto.precio }}
+           </div>
+          </div>
+         </div>
+      </div>
+     </div>
+     {% endfor %}
+   </div>
+ </div> 
+</body>
+</html>
+
+
+
+
+
+
+

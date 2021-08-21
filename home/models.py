@@ -40,7 +40,7 @@ class Comprador (models.Model):
 
 class Producto (models.Model):
   codigo_producto = models.AutoField(primary_key = True)
-  imagen = models.CharField(max_length= 300, null= True, blank= False, verbose_name= 'Imagen')
+  imagen = models.CharField(max_length= 400, null= False, blank= False, verbose_name= 'Imagen')
   nombre = models.CharField(max_length=30, verbose_name= 'Nombre de prodcto')
   descripcion = models.TextField(max_length=300, verbose_name= 'Descripcion')
   precio = models.DecimalField(max_digits= 20, decimal_places= 2, default= 0.00, verbose_name= 'Precio')
